@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Spinaci from "./assets/pizzas/spinaci.jpg";
+import "./index.css";
 
 const pizzaData = [
   {
@@ -52,6 +53,7 @@ const App = () => {
     <>
       <div className="">
         <Header />
+        <Menu />
         <Footer />
       </div>
     </>
@@ -71,16 +73,28 @@ const Header = () => {
 const Menu = () => {
   return (
     <>
-      <div className=""></div>
+      <div className="">
+        <h2>Our menu</h2>
+        <Pizza />
+      </div>
     </>
   );
 };
 
 const Footer = () => {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = (hour >= openHour) & (hour <= closeHour);
+
+  // if ((hour >= openHour) & (hour <= closeHour)) {
+  //   alert(`We're currently open!`);
+  // } else alert(`Sorry! we're closed`);
+
   return (
     <>
       <div className="">
-        <footer>We're currently open</footer>
+        <footer>{new Date().toLocaleTimeString()} We're currently open</footer>
       </div>
     </>
   );
