@@ -51,7 +51,7 @@ const pizzaData = [
 const App = () => {
   return (
     <>
-      <div className="">
+      <div className="container">
         <Header />
         <Menu />
         <Footer />
@@ -63,9 +63,9 @@ const App = () => {
 const Header = () => {
   return (
     <>
-      <div className="">
+      <header className="header">
         <h1>Fast React Pizza Co.</h1>
-      </div>
+      </header>
     </>
   );
 };
@@ -73,10 +73,13 @@ const Header = () => {
 const Menu = () => {
   return (
     <>
-      <div className="">
+      <main className="menu">
         <h2>Our menu</h2>
         <Pizza />
-      </div>
+        <Pizza />
+        <Pizza />
+        <Pizza />
+      </main>
     </>
   );
 };
@@ -94,7 +97,9 @@ const Footer = () => {
   return (
     <>
       <div className="">
-        <footer>{new Date().toLocaleTimeString()} We're currently open</footer>
+        <footer className="footer">
+          {new Date().toLocaleTimeString()} We're currently open
+        </footer>
       </div>
     </>
   );
@@ -105,7 +110,7 @@ const Pizza = () => {
     <>
       <div className="">
         <img src={Spinaci} alt="" />
-        <h2>Pizza Spianci</h2>
+        <h3>Pizza Spianci</h3>
         <p>Tomato, mozarella, mushrooms, and onion</p>
       </div>
     </>
